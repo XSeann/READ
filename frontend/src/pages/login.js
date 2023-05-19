@@ -21,7 +21,7 @@ const Login = () => {
             setShow(false)
         }
     }
-console.log(isLoading)
+
     return(
         <div id='loginpage'>
             <div id='bglogin'></div>

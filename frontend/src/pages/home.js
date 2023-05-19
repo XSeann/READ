@@ -24,7 +24,7 @@ const Home = () => {
 
     useEffect(() =>  {
         const getPdf = async () => {
-            const response = await fetch('/api/file')
+            const response = await fetch('https://read-6yer.onrender.com/api/file')
             const json = await response.json()
             setAllPdf(json)
         }
@@ -137,7 +137,6 @@ const Home = () => {
                     layer[0].push({bold: str2})
                     layer[0].push({title2: str3})
                 }
-                //console.log(layer)
             }
         }
         let a = -1
@@ -167,7 +166,6 @@ const Home = () => {
             
             layer[1][k].push([layer[0][c].title, layer[0][b].bold, layer[0][a].title2, layer[0][d].section, layer[0][e].date, layer[0][f].authors, layer[0][g].id])
         }
-        //console.log(layer[1])
     }
 
     const ICT = () => {

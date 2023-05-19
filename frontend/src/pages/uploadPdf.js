@@ -43,21 +43,19 @@ const UploadPdf = () => {
             
         }catch(error) {
             setFile('')
-            console.log('Error: ', "Error Happens")
         }
         
         reader.onload = () => {
             setFile(reader.result) //base64encoded
         }
         reader.onerror = error => {
-            console.log('Error: ', error)
         }
     }
 
     const uploadFile = async (e) => {
         e.preventDefault()
         setIsLoading(true)
-        const response = await fetch('/api/file', {
+        const response = await fetch('https://read-6yer.onrender.com/api/file', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({title, authors, section, pdf: file})

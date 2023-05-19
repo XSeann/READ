@@ -13,7 +13,7 @@ const PdfView = () => {
 
     useEffect(() => {
         const getOneData = async () => {
-            const response = await fetch(`/api/file/${id.id}`)
+            const response = await fetch(`https://read-6yer.onrender.com/api/file/${id.id}`)
             const json = await response.json()
             setOneFile(json)
         }

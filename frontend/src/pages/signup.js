@@ -43,7 +43,6 @@ const Signup = () => {
             setFrontImg(reader.result) //base64encoded
         }
             reader.onerror = error => {
-            console.log('Error: ', error)
         }
     }
 
@@ -69,14 +68,13 @@ const Signup = () => {
             setBckImg(reader2.result) //base64encoded
         }
             reader2.onerror = error => {
-            console.log('Error: ', error)
         }
     }
     console.log(errorImg)
     useEffect(() => {
         const signUpReqSend = async () => {
             setIsLoading(true)
-            const response = await fetch('/api/user/signup', {
+            const response = await fetch('https://read-6yer.onrender.com/api/user/signup', {
                 method: 'POST',
                 body: JSON.stringify({email, password, base1: frontImg, base2: bckImg}),
                 headers: {'Content-Type': 'application/json'} 
@@ -101,7 +99,7 @@ const Signup = () => {
 
         const sndEmail = async () => {
             const message = 'Wait for atleast an hour before your account is approved. Thank you' 
-            const sendEmail = await fetch('/api/user/sendEmail', {
+            const sendEmail = await fetch('https://read-6yer.onrender.com/api/user/sendEmail', {
                 method: 'POST',
                 body: JSON.stringify({email, message}),
                 headers: {'Content-Type': 'application/json'} 
