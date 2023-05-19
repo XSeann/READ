@@ -6,13 +6,20 @@ const cors = require('cors')
 const fileRoute = require('./route/fileRoute')
 const userRoutes = require('./route/userRoute')
 
+const corsOptions ={
+  origin:'*', 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200,
+}
+
 // express app
 const app = express()
 
 // middleware
-app.use(express.json({limit: '50mb'}))
 
-app.use(cors())
+app.use(cors(corsOptions))
+
+app.use(express.json({limit: '50mb'}))
 
 app.use((req, res, next) => {
   console.log(req.path, req.method)
