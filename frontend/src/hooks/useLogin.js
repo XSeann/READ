@@ -10,9 +10,9 @@ export const useLogin = () => {
     setIsLoading(true)
     setError(null)
 
-    const response = await fetch('https://read-6yer.onrender.com/api/user/login', {
+    const response = await fetch('/api/user/login', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*', 'Access-Control-Allow-Credentials': 'true'},
+      headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : 'https://read-online-library.netlify.app/'},
       body: JSON.stringify({ email, password })
     })
     const json = await response.json()
