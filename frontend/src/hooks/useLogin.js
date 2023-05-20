@@ -10,7 +10,7 @@ export const useLogin = () => {
     setIsLoading(true)
     setError(null)
 
-    const response = await fetch('/api/user/login', {
+    const response = await fetch('https://read-6yer.onrender.com/api/user/login', {
       method: 'POST',
       headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*', 'Access-Control-Allow-Credentials': 'true'},
       body: JSON.stringify({ email, password })
